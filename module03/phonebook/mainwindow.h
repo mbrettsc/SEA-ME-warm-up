@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QListWidgetItem>
 #include "ContactList.h"
 
 QT_BEGIN_NAMESPACE
@@ -22,6 +23,10 @@ private slots:
     void on_addButton_clicked();
     void on_removeButton_clicked();
     void on_searchButton_clicked();
+    void on_saveButton_clicked();
+    void on_loadButton_clicked();
+    void on_contactListWidget_itemClicked(QListWidgetItem *item);
+    void on_loadJsonButton_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -11,6 +11,7 @@ public:
     void removeContact(const QString& name);
     Contact* getByContactName(const QString& name);
     const QVector<Contact>& getContacts(void) const;
+    QList<Contact> searchContacts(const QString &searchTerm, const QString &criteria);
 private:
     QVector<Contact> contacts_;
 };

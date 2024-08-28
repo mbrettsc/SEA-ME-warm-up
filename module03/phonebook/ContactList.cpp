@@ -30,3 +30,16 @@ const QVector<Contact>& ContactList::getContacts(void) const
 {
     return contacts_;
 }
+
+QList<Contact> ContactList::searchContacts(const QString &searchTerm, const QString &criteria)
+{
+    QList<Contact> results;
+    for (const Contact &contact : contacts_) {
+        if ((criteria == "Name" && contact.getName().contains(searchTerm, Qt::CaseInsensitive)) ||
+            (criteria == "Phone" && contact.getPhone().contains(searchTerm, Qt::CaseInsensitive)) ||
+            (criteria == "Email" && contact.getEmail().contains(searchTerm, Qt::CaseInsensitive))) {
+            results.append(contact);
+        }
+    }
+    return results;
+}
